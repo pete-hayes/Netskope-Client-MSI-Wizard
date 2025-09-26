@@ -20,7 +20,7 @@ This project provides a simple HTML/JavaScript-based wizard to help generate ins
 ## Security
 **This script is intended for local use only and should not be published or exposed on the public Internet.**
 
-It makes a single request to load the Bootstrap library. No Netskope token or other sensitive information is transmitted externally. The Netskope token is critical security data and must remain private at all times.
+It makes a single request to load the Bootstrap library. No Netskope tokens or other sensitive information is transmitted externally. The Netskope token information is critical security data and must remain private at all times.
 
 ## License
 Licensed under MIT — free to use, modify, and share, with no warranty.
