@@ -8,6 +8,9 @@ This project provides a simple HTML/JavaScript-based wizard to help generate ins
 - Copy-to-clipboard functionality
 - Lightweight design (HTML + Bootstrap + vanilla JavaScript)
 
+## Screenshot
+<img src="https://i.imgur.com/XHpzJSX.png" width="400">
+
 ## Usage
 1. Clone or download this repository.
 2. Open `ns_client_msi_wizard` in your browser.
