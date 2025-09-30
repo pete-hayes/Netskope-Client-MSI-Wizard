@@ -9,7 +9,7 @@ This project provides a simple HTML/JavaScript-based wizard to help generate ins
 - Lightweight design (HTML + Bootstrap + vanilla JavaScript)
 
 ## Screenshot
-<img src="https://i.imgur.com/bFCKqNH.png" width="400">
+<img src="https://i.imgur.com/NgzoEWC.png" width="400">
 
 ## Usage
 1. Clone or download this repository.
