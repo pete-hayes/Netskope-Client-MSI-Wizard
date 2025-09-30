@@ -60,8 +60,8 @@
       font-style: italic;
     }
 
-    /* Copy button styling */
-    .copy-button {
+    /* Copy/Download button styling */
+    .action-button {
       background-color: #111; 
       color: #33ff33;
       border: 1px solid #33ff33;
@@ -70,14 +70,15 @@
       padding: 2px 8px;
       cursor: pointer;
       display: none;
+      text-decoration: none;
     }
 
-    .copy-button:hover {
+    .action-button:hover {
       background-color: #33ff33;
       color: #000;
     }
 
-    .copy-button:focus {
+    .action-button:focus {
       outline: none;
     }
 
@@ -226,9 +227,12 @@
             <code id="command" class="output-placeholder"></code>
           </div>
           <div class="text-end mt-2 mb-4">
-            <button class="btn copy-button btn-sm" id="copyButton" type="button" disabled>
+            <button class="action-button" id="copyButton" type="button" disabled>
               Copy
             </button>
+            <a class="action-button" id="downloadButton" href="#" target="_blank">
+              Download Client
+            </a>
           </div>
         </div>
 
@@ -249,6 +253,7 @@
       const allOtherFields = document.querySelectorAll('input:not(#tenant), select, button#copyButton');
       const cmdOutput = document.getElementById('command');
       const copyButton = document.getElementById('copyButton');
+      const downloadButton = document.getElementById('downloadButton');
 
       // IDs of optional fields (exclude from highlighting)
       const optionalFields = ['prelogon-user', 'failClosed', 'log-file-path', 'enrollencryptiontoken'];
@@ -353,6 +358,7 @@
 
       function update() {
         const tenant = tenantInput.value.trim();
+        const domain = document.getElementById('domain').value;
         const userMode = document.getElementById('userMode').value;
         const token = document.getElementById('token').value.trim();
         const enrollToken = document.getElementById('enrollauthtoken').value.trim();
@@ -361,6 +367,7 @@
           cmdOutput.textContent = '';
           copyButton.disabled = true;
           copyButton.style.display = "none";
+          downloadButton.style.display = "none";
           highlightPendingFields();
           return;
         }
@@ -376,6 +383,7 @@
           cmdOutput.classList.add("output-placeholder");
           copyButton.disabled = true;
           copyButton.style.display = "none";
+          downloadButton.style.display = "none";
           highlightPendingFields();
           return;
         }
@@ -385,6 +393,15 @@
         cmdOutput.classList.remove("output-placeholder");
         copyButton.disabled = !cmd;
         copyButton.style.display = cmd ? "inline-block" : "none";
+
+        // Build download URL
+        if (tenant && domain) {
+          const downloadUrl = `https://download-${tenant}.${domain}/dlr/win/get`;
+          downloadButton.href = downloadUrl;
+          downloadButton.style.display = cmd ? "inline-block" : "none";
+        } else {
+          downloadButton.style.display = "none";
+        }
 
         highlightPendingFields();
       }
