@@ -7,6 +7,7 @@ This project provides a simple HTML/JavaScript-based wizard to help generate ins
 - Auto-generated `msiexec` command output
 - Copy-to-clipboard functionality
 - Lightweight design (HTML + Bootstrap + vanilla JavaScript)
+- Download button for the Netskope Client (Windows) 
 
 ## Screenshot
 <img src="https://i.imgur.com/NgzoEWC.png" width="400">
