@@ -10,6 +10,7 @@ This project provides a simple HTML/JavaScript-based wizard to help generate ins
 - Download button for the Netskope Client (Windows) 
 
 ## Video
+<img src="./Netskope_Client_MSI_Wizard_Demo.gif" width="400">
 
 ## Usage
 1. Clone or download this repository.
