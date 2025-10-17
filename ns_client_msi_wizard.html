@@ -385,7 +385,7 @@
         if (!userMode || !token || !enrollToken) missing.push("Almost there! Please provide the following:");
         if (!userMode) missing.push("- Select an Enrollment Mode");
         if (!token) missing.push("- Enter a Tenant Token");
-        if (!enrollToken) missing.push("- Enter an Enrollment Token");
+        if (!enrollToken) missing.push("- Enter an Authentication Token");
 
         if (missing.length > 0) {
           cmdOutput.textContent = missing.join("\n");
