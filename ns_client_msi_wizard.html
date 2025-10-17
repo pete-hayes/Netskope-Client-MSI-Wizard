@@ -1,6 +1,6 @@
 <!-- 
   Netskope Client MSI Parameter Wizard
-  Version: 1.1
+  Version: 1.11
   Author: Peter Hayes
   Disclaimer: This tool is not affiliated with or supported by Netskope. Use at your own risk.
 -->
@@ -326,11 +326,14 @@
           }
         });
 
-        const tenant = document.getElementById('tenant').value;
-        const domain = document.getElementById('domain').value;
-        if (tenant && domain) {
-          parts.push(`host=addon-${tenant}.${domain}`);
-        }
+		const tenant = document.getElementById('tenant').value;
+		const domain = document.getElementById('domain').value;
+		const userMode = document.getElementById('userMode').value;
+
+		// Only add host parameter if not using IdP mode
+		if (tenant && domain && !userMode.includes('idp')) {
+			parts.push(`host=addon-${tenant}.${domain}`);
+		}
 
         return `msiexec /I NSClient.msi ${parts.join(' ')} ${ending.join(' ')}`.trim();
       }
