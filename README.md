@@ -14,7 +14,7 @@ This project provides a simple HTML/JavaScript-based wizard to help generate ins
 
 ## Usage
 1. Clone or download this repository.
-2. Open `ns_client_msi_wizard` in your browser.
+2. Open `ns_client_msi_wizard.html` in your browser.
 3. Enter your Netskope parameters as required.
 4. Copy the generated command and use it in your deployment script or from the command line.
 
