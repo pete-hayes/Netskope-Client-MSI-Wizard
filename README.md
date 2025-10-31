@@ -6,7 +6,6 @@ This project provides a simple HTML/JavaScript-based wizard to help generate ins
 - Guided form for entering MSI parameter values
 - Auto-generated `msiexec` command output
 - Copy-to-clipboard functionality
-- Lightweight design (HTML + Bootstrap + vanilla JavaScript)
 - Download button for the Netskope Client (Windows) 
 
 ## Video
